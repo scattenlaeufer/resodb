@@ -20,17 +20,17 @@ if ( !function_exists( 'add_action' ) ) {
 #require_once( 'RESODB_PLUGIN_DIR' . 'test.php' );
 
 add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
-add_action( 'admin_menu', 'my_plugin_menu' );
+add_action( 'admin_menu', 'reso_db_menu' );
 
 /*
  * First baby steps in adding a administration menu
  */
 
-function my_plugin_menu() {
-	add_options_page( 'My Plugin Options', 'My Plugin', 'manage_options', 'my-unique-identifier', 'my_plugin_options' );
+function reso_db_menu() {
+	add_menu_page( 'ResoDB Admin-Interface', 'ResoDB', 'manage_options', 'reso-db-mm', 'reso_db_main_menu' );
 }
 
-function my_plugin_options() {
+function reso_db_main_menu() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}

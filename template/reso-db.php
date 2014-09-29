@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name:	Resolutionsdatenbank
+Template Name:	Blubb
  */
 
 get_header(); ?>

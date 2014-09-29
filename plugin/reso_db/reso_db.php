@@ -19,6 +19,8 @@ if ( !function_exists( 'add_action' ) ) {
 
 #require_once( 'RESODB_PLUGIN_DIR' . 'test.php' );
 
+add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
+
 
 class PageTemplater {
 
@@ -83,7 +85,7 @@ class PageTemplater {
 
                 // Add your templates to this array.
                 $this->templates = array(
-                        'goodtobebad-template.php'     => 'Resolutionsdatenbank',
+                        'reso_db_template.php'     => 'Resolutionsdatenbank',
                 );
 				
         } 
@@ -154,6 +156,5 @@ class PageTemplater {
 
 } 
 
-add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
 
 ?>
